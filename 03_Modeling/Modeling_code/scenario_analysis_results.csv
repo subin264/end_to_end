@@ -1,0 +1,31 @@
+﻿ISO,Country,topsis_score,topsis_rank,scenario
+AUS,Australia,0.6959743854466679,1,balanced
+CAN,Canada,0.43212316310765436,5,balanced
+DEU,Germany,0.6107016854471452,2,balanced
+KOR,Korea,0.5348110148448366,3,balanced
+GBR,United Kingdom,0.3105126438068994,6,balanced
+USA,United States,0.5,4,balanced
+AUS,Australia,0.7253962381951174,1,talent_focused
+CAN,Canada,0.46253103476078616,4,talent_focused
+DEU,Germany,0.7058517583884207,2,talent_focused
+KOR,Korea,0.6468674269004199,3,talent_focused
+GBR,United Kingdom,0.2865916383616615,6,talent_focused
+USA,United States,0.38742588672279316,5,talent_focused
+AUS,Australia,0.6728558285535342,1,regulation_focused
+CAN,Canada,0.42367560024118295,4,regulation_focused
+DEU,Germany,0.5481872909442629,3,regulation_focused
+KOR,Korea,0.3878564748542514,5,regulation_focused
+GBR,United Kingdom,0.3181193431527733,6,regulation_focused
+USA,United States,0.6125741132772069,2,regulation_focused
+AUS,Australia,0.6148152963624867,2,market_focused
+CAN,Canada,0.312301923707116,6,market_focused
+DEU,Germany,0.7058517583884207,1,market_focused
+KOR,Korea,0.523243331150552,4,market_focused
+GBR,United Kingdom,0.3909874751308907,5,market_focused
+USA,United States,0.6125741132772069,3,market_focused
+AUS,Australia,0.7774211483399464,1,infra_focused
+CAN,Canada,0.5378329089551737,3,infra_focused
+DEU,Germany,0.4877394560837313,4,infra_focused
+KOR,Korea,0.6055375919724572,2,infra_focused
+GBR,United Kingdom,0.23714335323099847,6,infra_focused
+USA,United States,0.38742588672279316,5,infra_focused

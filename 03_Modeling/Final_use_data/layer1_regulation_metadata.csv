@@ -1,0 +1,31 @@
+country_code,regulation_category,regulation_name,regulation_full_name,enforcing_agency,primary_requirement,source_url
+US,privacy,CCPA,California Consumer Privacy Act,CPPA; California AG,Right to know delete and opt-out of data sale,https://oag.ca.gov/privacy/ccpa
+US,competition,Sherman Act,Sherman Antitrust Act,FTC; DOJ,Prohibits monopolization and contracts in restraint of trade,https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws
+US,consumer,FTC Act Section 5,Federal Trade Commission Act Section 5,FTC,Prohibits unfair or deceptive acts or practices,https://www.ftc.gov/legal-library/browse/statutes/federal-trade-commission-act
+US,financial,Dodd-Frank,Dodd-Frank Wall Street Reform and Consumer Protection Act,SEC; CFPB,Systemic risk oversight and consumer financial protection,https://www.congress.gov/bill/111th-congress/house-bill/4173
+US,labor,FLSA,Fair Labor Standards Act,DOL; WHD,Federal minimum wage and overtime pay requirements,https://www.dol.gov/agencies/whd/flsa
+UK,privacy,UK GDPR,UK General Data Protection Regulation,ICO,Lawful basis and data subject rights for processing,https://ico.org.uk/
+UK,competition,Competition Act 1998,Competition Act 1998,CMA,Prohibits anti-competitive agreements and abuse of dominant position,https://www.legislation.gov.uk/ukpga/1998/41/contents
+UK,consumer,Consumer Rights Act 2015,Consumer Rights Act 2015,CMA; Trading Standards,Goods must be of satisfactory quality and fit for purpose,https://www.legislation.gov.uk/ukpga/2015/15/contents/enacted
+UK,financial,FSMA 2000,Financial Services and Markets Act 2000,FCA; PRA,Authorization required for regulated financial activities,https://www.legislation.gov.uk/ukpga/2000/8/contents
+UK,labor,FSMA 2000,Employment Rights Act 1996,Employment Tribunal,Protection against unfair dismissal and redundancy rights,https://www.legislation.gov.uk/ukpga/1996/18/contents
+DE,privacy,GDPR,General Data Protection Regulation,BfDI; State DPAs,Data minimization purpose limitation and accountability,https://www.bfdi.bund.de/EN/Home/home_node.html
+DE,competition,GWB,Gesetz gegen Wettbewerbsbeschr_nkungen,Bundeskartellamt,Prohibition of cartels and abuse of market dominance,https://www.bundeskartellamt.de/EN/Home/home_node.html
+DE,consumer,UWG,Gesetz gegen den unlauteren Wettbewerb,Consumer Associations; Bundeskartellamt,Prohibition of misleading and aggressive commercial practices,https://www.gesetze-im-internet.de/uwg_2004/
+DE,financial,KWG,Kreditwesengesetz,BaFin,Licensing and prudential supervision of credit institutions,https://www.gesetze-im-internet.de/kredwg/
+DE,labor,ArbZG,Arbeitszeitgesetz,State Labor Inspectorates,Maximum 8-hour daily working time with exceptions,https://www.gesetze-im-internet.de/arbzg/
+CA,privacy,PIPEDA,Personal Information Protection and Electronic Documents Act,OPC,Consent required for collection use and disclosure,https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/
+CA,competition,Competition Act,Competition Act,Competition Bureau,Prohibits conspiracies bid-rigging and false advertising,https://laws-lois.justice.gc.ca/eng/acts/c-34/
+CA,consumer,Consumer Protection Acts,Consumer Protection Acts (provincial),Provincial Consumer Affairs,Protection against unfair business practices and product safety,https://www.ontario.ca/laws/statute/02c30
+CA,financial,Bank Act,Bank Act,OSFI; FCAC,Federal regulation and supervision of banks,https://laws-lois.justice.gc.ca/eng/acts/B-1.01/
+CA,labor,Canada Labour Code,Canada Labour Code,Labour Program,Federal employment standards and occupational health and safety,https://laws-lois.justice.gc.ca/eng/acts/l-2/
+AU,privacy,Privacy Act 1988,Privacy Act 1988,OAIC,Compliance with 13 Australian Privacy Principles,https://www.oaic.gov.au/privacy/privacy-legislation/the-privacy-act
+AU,competition,CCA 2010,Competition and Consumer Act 2010,ACCC,Prohibits anti-competitive conduct and misuse of market power,https://www.legislation.gov.au/C2004A00109/latest/text
+AU,consumer,ACL,Australian Consumer Law,ACCC; State regulators,Consumer guarantees and protection against misleading conduct,https://www.legislation.gov.au/C2004A00109/latest/text
+AU,financial,Corporations Act 2001,Corporations Act 2001,ASIC,Licensing and conduct obligations for financial services,https://www.legislation.gov.au/C2004A00818/latest/text
+AU,labor,Fair Work Act 2009,Fair Work Act 2009,Fair Work Ombudsman,National Employment Standards and modern award compliance,https://www.legislation.gov.au/C2009A00028/latest/text
+KR,privacy,PIPA,Personal Information Protection Act,PIPC,Consent purpose limitation and minimum collection principle,https://pipc.go.kr/np/
+KR,competition,MRFTA,Monopoly Regulation and Fair Trade Act,KFTC,Prohibition of unfair trade practices and abuse of market dominance,https://www.ftc.go.kr/eng/index.do
+KR,consumer,Framework Act on Consumers,Framework Act on Consumers,KFTC; Korea Consumer Agency,Protection of consumer safety and right to information,https://www.ftc.go.kr/eng/index.do
+KR,financial,FSCMA,Financial Investment Services and Capital Markets Act,FSC; FSS,Registration and conduct rules for financial investment business,https://www.fsc.go.kr/eng/index
+KR,labor,Labor Standards Act,Labor Standards Act,MOEL,Working hours wages and leave entitlements,https://www.moel.go.kr/english/
