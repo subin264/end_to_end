@@ -31,3 +31,23 @@ kr (kftc): https://www.ftc.go.kr
 - `03_Modeling/Final_use_data/layer1_regulation_metadata.csv`
 - `03_Modeling/Final_use_data/layer2_final_data.csv`
 - `03_Modeling/Final_use_data/2_mag_layer3_market_talent_2024_fixed.csv`
+
+
+## 1) processing (build final dataset)
+
+- run the processing script(s) under `02_processing_eda/code/` to convert raw outputs into the unified schema and to build the final dataset.
+- expected key output file: `02_processing_eda/03_eda/data/layer2_final_data.csv`
+
+## 2) eda (analysis notebook)
+
+- open and run: `02_processing_eda/03_eda/code/eda_final.ipynb`
+- additional working notebook (optional): `02_processing_eda/code/Total_Work_Desk_eda.ipynb`
+
+## 3) modeling (final submission)
+
+- run the code under `03_modeling/` to generate rankings and scenario outputs.
+
+## key outputs
+
+- **final dataset for modeling/eda**: `02_processing_eda/03_eda/data/layer2_final_data.csv`
+- **eda figures/logs**: `02_processing_eda/03_eda/eda_results/`
