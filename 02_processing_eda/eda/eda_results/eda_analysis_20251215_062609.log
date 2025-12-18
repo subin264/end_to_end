@@ -1,0 +1,235 @@
+[2025-12-15 06:26:09] ============================================================
+[2025-12-15 06:26:09] eda analysis started
+[2025-12-15 06:26:09] ============================================================
+[2025-12-15 06:26:09] 
+[2025-12-15 06:26:09] log file: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results/eda_analysis_20251215_062609.log
+[2025-12-15 06:26:09] 
+[2025-12-15 06:26:09] loading data...
+[2025-12-15 06:26:09] total records: 10997
+
+[2025-12-15 06:26:09] step 1: country balance analysis
+[2025-12-15 06:26:09] purpose: check data balance across countries
+[2025-12-15 06:26:09] concept: if one country has too many records, analysis may be biased
+
+[2025-12-15 06:26:09] country distribution:
+[2025-12-15 06:26:09] # A tibble: 7 × 4
+  country_code     n percentage cumulative_pct
+  <chr>        <int>      <dbl>          <dbl>
+1 US            5695      51.8            51.8
+2 GB            2377      21.6            73.4
+3 CA            1024       9.31           82.7
+4 DE             760       6.91           89.6
+5 AU             588       5.35           95.0
+6 KR             335       3.05           98.0
+7 UK             218       1.98          100  
+[2025-12-15 06:26:09] 
+interpretation: check if any country dominates (>50%)
+[2025-12-15 06:26:09] if unbalanced, consider stratified sampling in future analysis
+
+[2025-12-15 06:26:10] saved: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results/01_country_balance.png
+
+[2025-12-15 06:26:10] step 2: violation type frequency analysis
+[2025-12-15 06:26:10] purpose: identify dominant violation patterns
+[2025-12-15 06:26:10] missing value handling: exclude records with missing violation_type
+
+[2025-12-15 06:26:10] total records: 10997
+[2025-12-15 06:26:10] valid records (non-missing): 10967
+[2025-12-15 06:26:10] missing records: 30 (0.27%)
+[2025-12-15 06:26:10] coverage: 99.73%
+
+[2025-12-15 06:26:10] interpretation: if coverage < 90%, missing pattern needs investigation
+
+[2025-12-15 06:26:10] top 20 violation types:
+[2025-12-15 06:26:10] # A tibble: 20 × 4
+   violation_type                            n percentage cumulative_pct
+   <chr>                                 <int>      <dbl>          <dbl>
+ 1 environmental violation                1209      11.0            11.0
+ 2 labor standards violation               901       8.22           19.2
+ 3 workplace safety or health violation    788       7.19           26.4
+ 4 investor protection violation           694       6.33           32.8
+ 5 consumer protection violation           658       6              38.8
+ 6 air pollution violation                 464       4.23           43.0
+ 7 insurance violation                     446       4.07           47.1
+ 8 deceptive practices, unfair practices   431       3.93           51.0
+ 9 water pollution violation               426       3.88           54.9
+10 anti-competitive practices              398       3.63           58.5
+11 government contracting fraud            379       3.46           62.0
+12 employment discrimination               237       2.16           64.1
+13 data_protection                         195       1.78           65.9
+14 lawful basis violation                  179       1.63           67.5
+15 banking violation                       174       1.59           69.1
+16 privacy violation                       144       1.31           70.4
+17 waste violation                         140       1.28           71.7
+18 access request violation                134       1.22           72.9
+19 telecommunications violation            134       1.22           74.2
+20 accounting fraud or deficiencies        133       1.21           75.4
+[2025-12-15 06:26:10] 
+[2025-12-15 06:26:10] top 10 violation types by country:
+[2025-12-15 06:26:10] # A tibble: 64 × 5
+   country_code violation_type                        n country_total percentage
+   <chr>        <chr>                             <int>         <int>      <dbl>
+ 1 AU           consumer protection violation        82           588      14.0 
+ 2 AU           investor protection violation        71           588      12.1 
+ 3 AU           workplace safety or health viola…    67           588      11.4 
+ 4 AU           waste violation                      60           588      10.2 
+ 5 AU           banking violation                    53           588       9.01
+ 6 AU           water pollution violation            51           588       8.67
+ 7 AU           utility service violation            48           588       8.16
+ 8 AU           anti-competitive practices           31           588       5.27
+ 9 AU           air pollution violation              23           588       3.91
+10 AU           telecommunications violation         19           588       3.23
+# ℹ 54 more rows
+[2025-12-15 06:26:10] 
+[2025-12-15 06:26:11] saved results
+
+[2025-12-15 06:26:11] step 3: sector missing rate and distribution analysis
+[2025-12-15 06:26:11] purpose: determine if sector (industry) data is usable for analysis
+[2025-12-15 06:26:11] missing value concept: sector is optional column, so missing is acceptable
+[2025-12-15 06:26:11] but high missing rate (>50%) limits industry-level analysis
+
+[2025-12-15 06:26:11] sector missing rate (overall):
+[2025-12-15 06:26:11] # A tibble: 1 × 5
+  total missing missing_pct available available_pct
+  <int>   <int>       <dbl>     <int>         <dbl>
+1 10997     600        5.46     10397          94.5
+[2025-12-15 06:26:11] 
+interpretation:
+[2025-12-15 06:26:11] - missing_pct < 30%: good, can use sector for analysis
+[2025-12-15 06:26:11] - missing_pct 30-50%: acceptable, but need imputation
+[2025-12-15 06:26:11] - missing_pct > 50%: poor, sector analysis may be unreliable
+
+[2025-12-15 06:26:11] sector missing rate by country:
+[2025-12-15 06:26:11] # A tibble: 7 × 6
+  country_code total missing missing_pct available available_pct
+  <chr>        <int>   <int>       <dbl>     <int>         <dbl>
+1 DE             760     431       56.7        329          43.3
+2 UK             218      34       15.6        184          84.4
+3 GB            2377     135        5.68      2242          94.3
+4 AU             588       0        0          588         100  
+5 CA            1024       0        0         1024         100  
+6 KR             335       0        0          335         100  
+7 US            5695       0        0         5695         100  
+[2025-12-15 06:26:11] 
+interpretation: identify countries with poor sector coverage
+
+[2025-12-15 06:26:11] top 20 sector distribution (missing excluded):
+[2025-12-15 06:26:11] # A tibble: 20 × 4
+   sector                                            n percentage cumulative_pct
+   <chr>                                         <int>      <dbl>          <dbl>
+ 1 financial services                             1656      15.9            15.9
+ 2 utilities and power generation                  898       8.64           24.6
+ 3 oil and gas                                     728       7              31.6
+ 4 retailing                                       621       5.97           37.5
+ 5 diversified                                     398       3.83           41.4
+ 6 healthcare services                             325       3.13           44.5
+ 7 private equity (including portfolio companie…   312       3              47.5
+ 8 healthcare                                      277       2.66           50.2
+ 9 telecommunications                              262       2.52           52.7
+10 business services                               238       2.29           55.0
+11 chemicals                                       234       2.25           57.2
+12 pharmaceuticals                                 201       1.93           59.2
+13 miscellaneous services                          196       1.89           61.0
+14 mining and minerals                             193       1.86           62.9
+15 construction and engineering                    190       1.83           64.7
+16 airlines                                        189       1.82           66.6
+17 food products                                   175       1.68           68.2
+18 waste management and environmental services     173       1.66           69.9
+19 motor vehicles                                  172       1.65           71.5
+20 pipelines                                       155       1.49           73.0
+[2025-12-15 06:26:11] 
+[2025-12-15 06:26:12] saved results
+
+[2025-12-15 06:26:12] step 4: enforcement date year distribution analysis
+[2025-12-15 06:26:12] purpose: check time range and recent data ratio
+[2025-12-15 06:26:12] missing value handling: date parsing may fail, creating NA values
+
+[2025-12-15 06:26:12] enforcement date missing rate:
+[2025-12-15 06:26:12] # A tibble: 1 × 3
+  total missing missing_pct
+  <int>   <int>       <dbl>
+1 10997     580        5.27
+[2025-12-15 06:26:12] 
+interpretation: date parsing failure creates missing values
+[2025-12-15 06:26:12] check if date format is consistent across countries
+
+[2025-12-15 06:26:12] year distribution:
+[2025-12-15 06:26:12] # A tibble: 31 × 4
+    year     n percentage cumulative_pct
+   <dbl> <int>      <dbl>          <dbl>
+ 1  1995     3       0.03           0.03
+ 2  1996    25       0.24           0.27
+ 3  1997    25       0.24           0.51
+ 4  1998    42       0.4            0.91
+ 5  1999    32       0.31           1.22
+ 6  2000    31       0.3            1.52
+ 7  2001    17       0.16           1.68
+ 8  2002    20       0.19           1.87
+ 9  2003    35       0.34           2.21
+10  2004    19       0.18           2.39
+# ℹ 21 more rows
+[2025-12-15 06:26:12] 
+[2025-12-15 06:26:12] recent data ratio (2020+):
+[2025-12-15 06:26:12] # A tibble: 1 × 3
+  total recent recent_pct
+  <int>  <int>      <dbl>
+1 10417   4354       41.8
+[2025-12-15 06:26:12] 
+interpretation: higher recent_pct means more current data
+
+[2025-12-15 06:26:13] saved results
+
+[2025-12-15 06:26:13] step 5: fine amount missing rate analysis
+[2025-12-15 06:26:13] purpose: check if fine amount data is usable for Bholat formula
+[2025-12-15 06:26:13] missing value handling: numeric conversion may fail, creating NA
+
+[2025-12-15 06:26:13] fine amount missing rate:
+[2025-12-15 06:26:13] # A tibble: 1 × 5
+  total missing missing_pct available available_pct
+  <int>   <int>       <dbl>     <int>         <dbl>
+1 10997    1123        10.2      9874          89.8
+[2025-12-15 06:26:13] 
+interpretation:
+[2025-12-15 06:26:13] - available_pct > 70%: good for Bholat formula
+[2025-12-15 06:26:13] - available_pct 50-70%: acceptable with imputation
+[2025-12-15 06:26:13] - available_pct < 50%: poor, may need alternative methods
+
+[2025-12-15 06:26:13] fine amount missing rate by country:
+[2025-12-15 06:26:13] # A tibble: 7 × 6
+  country_code total missing missing_pct available available_pct
+  <chr>        <int>   <int>       <dbl>     <int>         <dbl>
+1 DE             760     511       67.2        249          32.8
+2 UK             218     125       57.3         93          42.7
+3 CA            1024     176       17.2        848          82.8
+4 US            5695     241        4.23      5454          95.8
+5 GB            2377      70        2.94      2307          97.1
+6 AU             588       0        0          588         100  
+7 KR             335       0        0          335         100  
+[2025-12-15 06:26:13] 
+[2025-12-15 06:26:13] fine amount statistics by country:
+[2025-12-15 06:26:13] # A tibble: 7 × 7
+  country_code count       mean   median   min          max          sd
+  <chr>        <int>      <dbl>    <dbl> <dbl>        <dbl>       <dbl>
+1 AU             588   9602274.  188836. 5504     915970900   57533693.
+2 CA             848   2391757.   77851  3700     323365250   16368931.
+3 DE             249  33985017.  324432    54    1176910000  137935443.
+4 GB            2307   8065247.   75998  2540    1307624500   49555455.
+5 KR             335  13240717. 1992978  5252     847690000   55081949.
+6 UK              93   1701490.  165100   248.     23809680    4593252.
+7 US            5454 571439458. 1300000    51  293000000000 7275955896.
+[2025-12-15 06:26:13] 
+[2025-12-15 06:26:14] saved results
+
+[2025-12-15 06:26:14] ============================================================
+[2025-12-15 06:26:14] eda analysis completed
+[2025-12-15 06:26:14] results saved to: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results
+[2025-12-15 06:26:14] log file: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results/eda_analysis_20251215_062609.log
+[2025-12-15 06:26:14] ============================================================
+[2025-12-15 06:26:14] 
+analysis summary:
+[2025-12-15 06:26:14] total records: 10,997
+[2025-12-15 06:26:14] countries: 7
+[2025-12-15 06:26:14] country list: AU, CA, DE, GB, KR, UK, US
+[2025-12-15 06:26:14] violation types: 313
+[2025-12-15 06:26:14] sector missing rate: 5.46%
+[2025-12-15 06:26:14] recent data ratio (2020+): 41.8%
+[2025-12-15 06:26:14] fine amount missing rate: 10.21%

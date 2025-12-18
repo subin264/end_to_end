@@ -1,0 +1,5 @@
+[1] "cat(\"step 3: sector missing rate and distribution analysis\\n\\n\")"
+purpose: determine if sector (industry) data is usable for analysis
+missing value concept: sector is optional column, so missing is acceptable
+but high missing rate (>50%%) limits industry-level analysis
+

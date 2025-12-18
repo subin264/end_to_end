@@ -1,0 +1,218 @@
+============================================================
+eda analysis started
+============================================================
+
+log file: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results/eda_analysis_20251215_054309.log
+
+loading data...
+total records: 10997
+
+required columns missing values:
+
+             column  missing_count
+0    enforcement_id              2
+1      country_code              0
+2      company_name            277
+3    violation_type             30
+4  enforcement_date             58
+5  enforcing_agency              1
+step 1: country balance analysis
+
+
+  country_code     n  percentage  cumulative_pct
+6           US  5695       51.79           51.79
+3           GB  2377       21.61           73.40
+1           CA  1024        9.31           82.71
+2           DE   760        6.91           89.62
+0           AU   588        5.35           94.97
+4           KR   335        3.05           98.02
+5           UK   218        1.98          100.00
+
+saved: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results/01_country_balance.png
+
+step 2: violation type frequency analysis
+
+analysis target: 10967 records
+coverage: 99.73%
+
+top 20 violation types:
+
+                           violation_type     n  percentage  cumulative_pct
+0                 environmental violation  1209       11.02           11.02
+1               labor standards violation   901        8.22           19.24
+2    workplace safety or health violation   788        7.19           26.43
+3           investor protection violation   694        6.33           32.76
+4           consumer protection violation   658        6.00           38.76
+5                 air pollution violation   464        4.23           42.99
+6                     insurance violation   446        4.07           47.06
+7   deceptive practices, unfair practices   431        3.93           50.99
+8               water pollution violation   426        3.88           54.87
+9              anti-competitive practices   398        3.63           58.50
+10           government contracting fraud   379        3.46           61.96
+11              employment discrimination   237        2.16           64.12
+12                        data_protection   195        1.78           65.90
+13                 lawful basis violation   179        1.63           67.53
+14                      banking violation   174        1.59           69.12
+15                      privacy violation   144        1.31           70.43
+16                        waste violation   140        1.28           71.71
+17           telecommunications violation   134        1.22           72.93
+18               access request violation   134        1.22           74.15
+19       accounting fraud or deficiencies   133        1.21           75.36
+
+top 10 violation types by country:
+
+   country_code                        violation_type    n  country_total  percentage
+0            AU         consumer protection violation   82            588       13.95
+1            AU         investor protection violation   71            588       12.07
+2            AU  workplace safety or health violation   67            588       11.39
+3            AU                       waste violation   60            588       10.20
+4            AU                     banking violation   53            588        9.01
+..          ...                                   ...  ...            ...         ...
+59           US          government contracting fraud  379           5695        6.65
+60           US               air pollution violation  336           5695        5.90
+61           US             employment discrimination  237           5695        4.16
+62           US             labor standards violation  175           5695        3.07
+63           US  workplace safety or health violation  168           5695        2.95
+
+[64 rows x 5 columns]
+
+saved results
+
+step 3: sector missing rate and distribution analysis
+
+sector missing rate:
+
+   total  missing  missing_pct  available  available_pct
+0  10997      600         5.46      10397          94.54
+
+sector missing rate by country:
+
+  country_code  total  missing  available  missing_pct  available_pct
+2           DE    329      431        329       131.00          100.0
+5           UK    184       34        184        18.48          100.0
+3           GB   2242      135       2242         6.02          100.0
+0           AU    588        0        588         0.00          100.0
+1           CA   1024        0       1024         0.00          100.0
+4           KR    335        0        335         0.00          100.0
+6           US   5695        0       5695         0.00          100.0
+
+top 20 sector distribution:
+
+                                            sector     n  percentage  cumulative_pct
+0                               financial services  1656       15.93           15.93
+1                   utilities and power generation   898        8.64           24.57
+2                                      oil and gas   728        7.00           31.57
+3                                        retailing   621        5.97           37.54
+4                                      diversified   398        3.83           41.37
+5                              healthcare services   325        3.13           44.50
+6   private equity (including portfolio companies)   312        3.00           47.50
+7                                       healthcare   277        2.66           50.16
+8                               telecommunications   262        2.52           52.68
+9                                business services   238        2.29           54.97
+10                                       chemicals   234        2.25           57.22
+11                                 pharmaceuticals   201        1.93           59.15
+12                          miscellaneous services   196        1.89           61.04
+13                             mining and minerals   193        1.86           62.90
+14                    construction and engineering   190        1.83           64.73
+15                                        airlines   189        1.82           66.55
+16                                   food products   175        1.68           68.23
+17     waste management and environmental services   173        1.66           69.89
+18                                  motor vehicles   172        1.65           71.54
+19                                       pipelines   155        1.49           73.03
+
+saved results
+
+step 4: enforcement date year distribution analysis
+
+enforcement date missing rate:
+
+   total  missing  missing_pct
+0  10997      624         5.67
+
+year distribution:
+
+      year    n  percentage  cumulative_pct
+0   1995.0    2        0.02            0.02
+1   1996.0   22        0.21            0.23
+2   1997.0   21        0.20            0.43
+3   1998.0   38        0.37            0.80
+4   1999.0   30        0.29            1.09
+5   2000.0   30        0.29            1.38
+6   2001.0   16        0.15            1.53
+7   2002.0   20        0.19            1.72
+8   2003.0   35        0.34            2.06
+9   2004.0   17        0.16            2.22
+10  2005.0   14        0.13            2.35
+11  2006.0   13        0.13            2.48
+12  2007.0   15        0.14            2.62
+13  2008.0   26        0.25            2.87
+14  2009.0   21        0.20            3.07
+15  2010.0  517        4.98            8.05
+16  2011.0  536        5.17           13.22
+17  2012.0  548        5.28           18.50
+18  2013.0  500        4.82           23.32
+19  2014.0  582        5.61           28.93
+20  2015.0  610        5.88           34.81
+21  2016.0  528        5.09           39.90
+22  2017.0  620        5.98           45.88
+23  2018.0  587        5.66           51.54
+24  2019.0  672        6.48           58.02
+25  2020.0  699        6.74           64.76
+26  2021.0  729        7.03           71.79
+27  2022.0  770        7.42           79.21
+28  2023.0  714        6.88           86.09
+29  2024.0  899        8.67           94.76
+30  2025.0  542        5.23           99.99
+
+recent data ratio (2020+):
+
+   total  recent  recent_pct
+0  10373    4353       41.96
+
+saved results
+
+step 5: fine amount missing rate analysis
+
+fine amount missing rate:
+
+   total  missing  missing_pct  available  available_pct
+0  10997     1123        10.21       9874          89.79
+
+fine amount missing rate by country:
+
+  country_code  total  missing  available  missing_pct  available_pct
+2           DE    760      511        249        67.24          32.76
+5           UK    218      125         93        57.34          42.66
+1           CA   1024      176        848        17.19          82.81
+6           US   5695      241       5454         4.23          95.77
+3           GB   2377       70       2307         2.94          97.06
+0           AU    588        0        588         0.00         100.00
+4           KR    335        0        335         0.00         100.00
+
+fine amount statistics by country:
+
+  country_code  count          mean     median     min           max            sd
+0           AU    588  9.602274e+06   188835.5  5504.0  9.159709e+08  5.753369e+07
+1           CA    848  2.391757e+06    77851.0  3700.0  3.233652e+08  1.636893e+07
+2           DE    249  3.398502e+07   324432.0    54.0  1.176910e+09  1.379354e+08
+3           GB   2307  8.065247e+06    75998.0  2540.0  1.307624e+09  4.955546e+07
+4           KR    335  1.324072e+07  1992978.0  5252.0  8.476900e+08  5.508195e+07
+5           UK     93  1.701490e+06   165100.0   248.4  2.380968e+07  4.593252e+06
+6           US   5454  5.714395e+08  1300000.0    51.0  2.930000e+11  7.275956e+09
+
+saved results
+
+============================================================
+eda analysis completed
+results saved to: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results
+log file: /Users/baesubin/Desktop/데이터 수집_end_to_end/2_EDA/eda_results/eda_analysis_20251215_054309.log
+============================================================
+
+analysis summary:
+total records: 10,997
+countries: 7
+country list: AU, CA, DE, GB, KR, UK, US
+violation types: 313
+sector missing rate: 5.46%
+recent data ratio (2020+): 41.96%
+fine amount missing rate: 10.21%
